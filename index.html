@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinner</title>
+</head>
+<body style="background: #efefe8; color: rgb(59, 68, 59);">
+  <div style="width: 156px; margin: auto;">
+    <br>
+    <div style="color: rgb(187, 179, 179); font-size: 32px; padding: 12px;">晚餐約會</div>
+    <br>
+    <h2>🍴 去哪兒吃？</h2>
+    <div id="placediv" style="margin-left: 32px;"></div>
+    <h2>💵 兩人預算？</h2>
+    <div id="budgetdiv" style="margin-left: 32px;"></div>
+    <div style="margin-top: 60px;">
+      <button id="myButton" style="background:rgb(255, 255, 255); margin-left: 37px; padding: 6px 12px; border-radius: 16px;">再抽一次</button>
+    </div>
+  </div>
+</body>
+<script>
+  var myArray = [
+    "三峽",
+    "三峽",
+    "三峽",
+    "三峽",
+    "板橋",
+    "板橋",
+    "土城",
+    "土城",
+    "土城",
+    "土城",
+    "其他"
+  ];
+
+  var budget = [
+    "400內 (元)",
+    "400內 (元)",
+    "400-700 (元)",
+    "400-700 (元)",
+    "400-700 (元)",
+    "400-700 (元)",
+    "400-700 (元)",
+    "700-1000 (元)",
+    "700-1000 (元)",
+  ];
+
+  var placeItem = myArray[Math.floor(Math.random() * myArray.length)];
+  var budgetItem = budget[Math.floor(Math.random() * budget.length)];
+
+  document.getElementById('placediv').innerHTML += placeItem;
+  document.getElementById('budgetdiv').innerHTML += budgetItem;
+
+  var button = document.getElementById("myButton");
+  button.addEventListener("click", function (e) {
+    //button.disabled = "true";
+    location.reload();
+  }, false);
+
+</script>
+</html>
